@@ -13,5 +13,7 @@ sayMe 5 = "Five!"
 sayMe x = "Not between 1 and 5!"
 
 factorial :: (Integral a) => a -> a
-factorial 0 = 1
-factorial n = n * factorial (n - 1)
+factorial n
+  | n < 0 = (-1) -- deal with negative integer
+  | n == 0 = 1
+  | otherwise = n * factorial (n - 1)
