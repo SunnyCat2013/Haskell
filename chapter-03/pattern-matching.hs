@@ -17,3 +17,11 @@ factorial n
   | n < 0 = (-1) -- deal with negative integer
   | n == 0 = 1
   | otherwise = n * factorial (n - 1)
+
+head' :: [a] -> a
+head' [] = error "This is an empty list"
+head' (x:xs) = x
+
+length' :: (Num b) => [a] -> b
+length' [] = 0
+length' (_:xs) = 1 + length' xs
