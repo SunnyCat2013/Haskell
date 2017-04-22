@@ -20,8 +20,10 @@ factorial n
 
 head' :: [a] -> a
 head' [] = error "This is an empty list"
-head' (x:xs) = x
+head' (x:xs) = x -- x:xs 只能匹配长度大于 1 的列表。
 
 length' :: (Num b) => [a] -> b
 length' [] = 0
 length' (_:xs) = 1 + length' xs
+
+-- tuple matching
